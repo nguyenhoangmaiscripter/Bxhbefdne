@@ -389,7 +389,7 @@ local player = game.Players.LocalPlayer
 print("Clicked")
 end)
 
-Section:CreateButton("or if you too lazy,use this👇", function()
+Section3:CreateButton("or if you too lazy,use this👇", function()
 print("Clicked")
 end)
 
