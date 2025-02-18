@@ -330,72 +330,83 @@ end)
 
 local Section3 = Window:NewSection("no cooldown🚫⏳️📄")
 
-Section3:CreateButton("hold the tool before use", function()
+Section3:CreateButton("tutorial how to no cd", function()
+print("Clicked")
+end)
+
+Section3:CreateButton("change the item and", function()
+print("Clicked")
+end)
+
+Section3:CreateButton("hold the item u want no cd", function()
 -- nothing here
 print("Clicked")
 end)
 
-Section3:CreateButton("instant skill 1", function()
-local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local tool = character:FindFirstChildOfClass("Tool")
-    if tool and tool:FindFirstChild("1") then
-        local remoteEvent = tool["1"]:FindFirstChild("RemoteEvent")
-        if remoteEvent then
-            remoteEvent:FireServer()
-            print("Skill 1 đã được kích hoạt thông qua RemoteEvent!")
-        else
-            warn("Không tìm thấy RemoteEvent trong Tool!")
+Section3:CreateToggle("auto skill 1", function(value)
+getgenv().AutoUseTool = value -- Biến để bật/tắt script
+
+spawn(function()
+    while AutoUseTool do
+        local player = game.Players.LocalPlayer
+        local char = player.Character
+
+        if char and char:FindFirstChildOfClass("Tool") then
+            local tool = char:FindFirstChildOfClass("Tool")
+            if tool:FindFirstChild("1") and tool["1"]:FindFirstChild("RemoteEvent") then
+                tool["1"].RemoteEvent:FireServer()
+            end
         end
-    else
-        warn("Người chơi chưa cầm dụng cụ hoặc không tìm thấy Tool.")
+
+        wait(0.1) -- Giảm thời gian chờ nếu muốn tốc độ kích hoạt nhanh hơn
     end
-print("Clicked")
 end)
 
-Section3:CreateButton("instant skill 2", function()
-local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local tool = character:FindFirstChildOfClass("Tool")
-    if tool and tool:FindFirstChild("2") then
-        local remoteEvent = tool["2"]:FindFirstChild("RemoteEvent")
-        if remoteEvent then
-            remoteEvent:FireServer()
-            print("Skill 2 đã được kích hoạt thông qua RemoteEvent!")
-        else
-            warn("Không tìm thấy RemoteEvent trong Tool!")
+print(value)
+end)
+
+Section3:CreateToggle("auto skill 2", function(value)
+getgenv().AutoUseTool = value -- Biến để bật/tắt script
+
+spawn(function()
+    while AutoUseTool do
+        local player = game.Players.LocalPlayer
+        local char = player.Character
+
+        if char and char:FindFirstChildOfClass("Tool") then
+            local tool = char:FindFirstChildOfClass("Tool")
+            if tool:FindFirstChild("2") and tool["2"]:FindFirstChild("RemoteEvent") then
+                tool["2"].RemoteEvent:FireServer()
+            end
         end
-    else
-        warn("Người chơi chưa cầm dụng cụ hoặc không tìm thấy Tool.")
+
+        wait(0.1) -- Giảm thời gian chờ nếu muốn tốc độ kích hoạt nhanh hơn
     end
-print("Clicked")
 end)
 
-Section3:CreateButton("instant skill 3", function()
-local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local tool = character:FindFirstChildOfClass("Tool")
-    if tool and tool:FindFirstChild("3") then
-        local remoteEvent = tool["3"]:FindFirstChild("RemoteEvent")
-        if remoteEvent then
-            remoteEvent:FireServer()
-            print("Skill 3 đã được kích hoạt thông qua RemoteEvent!")
-        else
-            warn("Không tìm thấy RemoteEvent trong Tool!")
+print(value)
+end)
+
+Section3:CreateToggle("auto skill 3", function(value)
+getgenv().AutoUseTool = value -- Biến để bật/tắt script
+
+spawn(function()
+    while AutoUseTool do
+        local player = game.Players.LocalPlayer
+        local char = player.Character
+
+        if char and char:FindFirstChildOfClass("Tool") then
+            local tool = char:FindFirstChildOfClass("Tool")
+            if tool:FindFirstChild("3") and tool["3"]:FindFirstChild("RemoteEvent") then
+                tool["3"].RemoteEvent:FireServer()
+            end
         end
-    else
-        warn("Người chơi chưa cầm dụng cụ hoặc không tìm thấy Tool.")
+
+        wait(0.1) -- Giảm thời gian chờ nếu muốn tốc độ kích hoạt nhanh hơn
     end
-print("Clicked")
 end)
 
-Section3:CreateButton("or if you too lazy,use this👇", function()
-print("Clicked")
-end)
-
-Section3:CreateButton("new,no cd gui", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/nguyenhoangmaiscripter/Nocd/refs/heads/main/Flandre%20Hub"))()
-print("Clicked")
+print(value)
 end)
 
 local Section4 = Window:NewSection("teleports🏃‍♂️‍➡️📄")
