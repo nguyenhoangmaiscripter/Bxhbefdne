@@ -192,7 +192,7 @@ while wait(0) do
         local fishingEvent = workspace:FindFirstChild(player.Name) 
             and workspace[player.Name]:FindFirstChild("Fishing") 
             and workspace[player.Name].Fishing:FindFirstChild("Lava") 
-            and workspace[player.Name].Fishing.Lava:FindFirstChild("RemoteEvent")
+            and workspace[player.Name].Fishing.Desert:FindFirstChild("RemoteEvent")
 
         if fishingEvent then
             fishingEvent:FireServer("Fishing3")
@@ -215,7 +215,7 @@ while wait(0) do
         local fishingEvent = workspace:FindFirstChild(player.Name) 
             and workspace[player.Name]:FindFirstChild("Fishing") 
             and workspace[player.Name].Fishing:FindFirstChild("Snow") 
-            and workspace[player.Name].Fishing.Snow:FindFirstChild("RemoteEvent")
+            and workspace[player.Name].Fishing.Desert:FindFirstChild("RemoteEvent")
 
         if fishingEvent then
             fishingEvent:FireServer("Fishing3")
@@ -386,6 +386,10 @@ local player = game.Players.LocalPlayer
     else
         warn("Người chơi chưa cầm dụng cụ hoặc không tìm thấy Tool.")
     end
+print("Clicked")
+end)
+
+Section:CreateButton("or if you too lazy,use this👇", function()
 print("Clicked")
 end)
 
